@@ -1,0 +1,21 @@
+# Postgres 16 for reviewers who do not have a local Postgres.
+# Usage: docker compose up -d   then   DATABASE_URL=postgres://postgres:postgres@localhost:5432/e76
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: e76
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - e76_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d e76"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  e76_pgdata:

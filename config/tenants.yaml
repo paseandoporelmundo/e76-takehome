@@ -1,0 +1,45 @@
+# One entry per tenant. Adding a tenant = add an entry here + drop its files under
+# fixtures/<slug>/<source>/. No code changes.
+#
+# api_key_hash is sha256(api_key) in hex. Generate one with:
+#   node -e "console.log(require('crypto').createHash('sha256').update('YOUR-KEY').digest('hex'))"
+# The placeholder keys below are the sha256 of the strings "brand-a-key" and "brand-b-key".
+
+tenants:
+  - slug: brand-a
+    name: Brand A
+    api_key_hash: 91d124b5204919f8bc6939917fb1caa629fd959ca6bb4e466346ec78595c7724
+    timezone: America/New_York
+    currency: USD
+    sources:
+      orders:
+        file_pattern: "*.csv"
+        expected_cadence: daily
+        column_aliases: {}
+      email_events:
+        file_pattern: "*.csv"
+        expected_cadence: daily
+        column_aliases: {}
+      ad_spend:
+        file_pattern: "*.csv"
+        expected_cadence: daily
+        column_aliases: {}
+
+  - slug: brand-b
+    name: Brand B
+    api_key_hash: 829131e377a5e65d4fe1c684cd6ae790d0df4c2227b6eaf318eb38d8e3f4f83c
+    timezone: America/New_York
+    currency: USD
+    sources:
+      orders:
+        file_pattern: "*.csv"
+        expected_cadence: daily
+        column_aliases: {}
+      email_events:
+        file_pattern: "*.csv"
+        expected_cadence: daily
+        column_aliases: {}
+      ad_spend:
+        file_pattern: "*.csv"
+        expected_cadence: daily
+        column_aliases: {}

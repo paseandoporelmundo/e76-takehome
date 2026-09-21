@@ -1,0 +1,35 @@
+{
+  "name": "e76-takehome",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-tenant ingestion and modelling service: storefront orders, email events and ad spend for several brands, into Postgres, queryable through an API.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "db:migrate": "tsx src/db/migrate.ts",
+    "ingest": "tsx src/cli/ingest.ts",
+    "check-arrivals": "tsx src/cli/check-arrivals.ts",
+    "report": "tsx src/cli/report.ts",
+    "reconcile": "tsx src/cli/reconcile.ts",
+    "api": "tsx src/api/server.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "pg": "^8.13.1",
+    "yaml": "^2.7.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
