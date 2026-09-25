@@ -7,7 +7,7 @@ import { SOURCES, type Source } from "../config/tenants.js";
 export interface Delivery {
   source: Source;
   file: string;          // absolute path
-  name: string;          // path relative to the fixtures dir, e.g. northwind/orders/batch_03.csv
+  name: string;          // path relative to the fixtures dir, e.g. <tenant>/orders/batch_03.csv
   batch: number | null;  // from the manifest
 }
 

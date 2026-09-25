@@ -17,7 +17,8 @@
     "api": "tsx src/api/server.ts",
     "hash-key": "tsx src/cli/hash-key.ts",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "demo": "npm run db:reset && npm run ingest -- --tenant northwind --batches 1-3 && npm run report -- --tenant northwind --through 2026-01-23 && npm run ingest -- --tenant northwind --batches 4-5 && npm run ingest -- --tenant lumen && npm run reconcile -- --tenant northwind && npm run check-arrivals"
   },
   "dependencies": {
     "commander": "^13.1.0",

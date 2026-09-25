@@ -5,9 +5,9 @@ agents implement it and keep it explainable.
 
 ## Design source
 
-Before writing code, read `DESIGN.md` (English). If it does not exist yet, create it from the
-design notes Facundo points you to, then follow it. Do not change the architecture without
-asking and stating the tradeoff in two lines.
+Before writing code, read `README.md` (architecture) and `NOTES-fixtures.md` (what the data
+actually contains). Do not change the architecture without asking and stating the tradeoff in
+two lines.
 
 ## Stack (fixed)
 
@@ -37,7 +37,7 @@ Postgres. Both paths must work and both are documented in README.
 
 - Hour 1 is fixture reading only. Produce `NOTES-fixtures.md` listing every anomaly found
   before writing any pipeline code.
-- Work in the block order in `DESIGN.md`. After each block: run tests, then commit with a
+- After each block of work: run tests, then commit with a
   message that says what and why. Never squash, never commit `.env` or secrets.
 - Keep the codebase small and readable. Prefer one obvious way over a clever one.
 - Time box is eight hours of work. At each block boundary state what is left and what to cut.
