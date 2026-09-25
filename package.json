@@ -9,11 +9,13 @@
   },
   "scripts": {
     "db:migrate": "tsx src/db/migrate.ts",
+    "db:reset": "tsx src/db/migrate.ts --reset",
     "ingest": "tsx src/cli/ingest.ts",
-    "check-arrivals": "tsx src/cli/check-arrivals.ts",
     "report": "tsx src/cli/report.ts",
     "reconcile": "tsx src/cli/reconcile.ts",
+    "check-arrivals": "tsx src/cli/check-arrivals.ts",
     "api": "tsx src/api/server.ts",
+    "hash-key": "tsx src/cli/hash-key.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
